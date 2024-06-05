@@ -1,0 +1,30 @@
+{
+  "name": "bt-vs",
+  "displayName": "BubbleTea-VS",
+  "description": "Syntax Highlighting for BubbleTea-Lang",
+  "icon": "images/bt.png",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "bubbletea",
+      "aliases": ["BubbleTea", "bubbletea"],
+      "extensions": [".tea"],
+      "icon": {
+        "dark": "images/bt.png",
+        "light": "images/bt.png"
+      },
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "bubbletea",
+      "scopeName": "source.tea",
+      "path": "./syntaxes/bubbletea.tmLanguage.json"
+    }]
+  }
+}
