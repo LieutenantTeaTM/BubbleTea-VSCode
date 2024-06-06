@@ -35,7 +35,7 @@
 			},
 			{
 				"name": "keyword.operator.bubbletea",
-				"match": "[\\d\\(\\)\\+\\-\\*\/\\|\\:\\!]"
+				"match": "[\\d\\(\\)\\+\\-\\*\/\\|\\:\\!\\>\\<]"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
