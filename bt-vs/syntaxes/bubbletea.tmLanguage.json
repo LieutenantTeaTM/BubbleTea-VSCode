@@ -31,7 +31,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bubbletea",
-				"match": "\\b(if|else|for|in|while)\\b"
+				"match": "\\b(if|else|for|in|while|len|str|num)\\b"
 			},
 			{
 				"name": "keyword.operator.bubbletea",
@@ -39,11 +39,11 @@
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
-				"match": "v"
+				"match": "(vup|v)"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
-				"match": "\\;"
+				"match": "\\;|,"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
@@ -51,7 +51,7 @@
 			},
 			{
 				"name": "entity.name.method.bubblettea",
-				"match": "\\b(p|fn)\\b"
+				"match": "\\b(p|fn|pln|inp)\\b"
 			},
 			{
 				"name": "variable.language.bubbletea",
