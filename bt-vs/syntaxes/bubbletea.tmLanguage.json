@@ -31,11 +31,11 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bubbletea",
-				"match": "\\b(if|else|for|in|while|len|str|num|sleep|idx|fidx|round|rem_idx|rep_idx|app|rng)\\b"
+				"match": "\\b(if|else|for|in|while|len|str|num|sleep|idx|fidx|round|rem_idx|rep_idx|app|rng|fs_read|fs_readl|fs_create|fs_del|fs_write|fs_writel)\\b"
 			},
 			{
 				"name": "keyword.operator.bubbletea",
-				"match": "[\\d\\(\\)\\+\\-\\*\/\\|\\:\\!\\>\\<\\&]"
+				"match": "[\\d\\(\\)\\+\\-\\*\/\\|\\:\\!\\>\\<\\&\\%]"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
