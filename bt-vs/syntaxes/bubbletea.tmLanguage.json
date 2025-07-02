@@ -13,6 +13,9 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{ 
+			"include": "#functions" 
 		}
 	],
 	"repository": {
@@ -23,43 +26,50 @@
 			}]
 		},
 		"comment": {
-			"patterns": [{
-				"name": "comment.line.bubbletea",
-				"match": "(\/\/).*$"
-			}]
+			"patterns": [
+				{
+					"name": "comment.line.bubbletea",
+					"match": "(\/\/).*$"
+				},
+				{
+					"name": "comment.block.bubbletea",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
 		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bubbletea",
-				"match": "\\b(if|else|for|in|while|len|str|num|sleep|idx|fidx|round|rem_idx|rep_idx|app|rng|fs_read|fs_readl|fs_create|fs_del|fs_write|fs_writel)\\b"
+				"match": "\\b(if|else|for|in|while)\\b"
+			},
+			{
+				"name": "keyword.operator.arrow.bubbletea",
+				"match": "(<-|->)"
 			},
 			{
 				"name": "keyword.operator.bubbletea",
-				"match": "[\\d\\(\\)\\+\\-\\*\/\\|\\:\\!\\>\\<\\&\\%]"
+				"match": "[\\(\\)\\+\\-\\*/\\|:\\!><&%]"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
-				"match": "(vup|v)"
+				"match": "\\bv\\b"
 			},
 			{
 				"name": "keyword.control.less.bubbletea",
-				"match": "\\;|,"
-			},
-			{
-				"name": "keyword.control.less.bubbletea",
-				"match": "break|flush"
+				"match": "\\;,"
 			},
 			{
 				"name": "entity.name.method.bubblettea",
-				"match": "\\b(p|fn|pln|inp)\\b"
+				"match": "\\b(p!|ps!|inp!|zzz!|sp!)"
+			},
+			{
+				"name": "storage.type.bubbletea",
+				"match": "\\b(int|str|bool|float|null)\\b"
 			},
 			{
 				"name": "variable.language.bubbletea",
 				"match": "\\b(false|true)\\b"
-			},
-			{
-				"name": "variable.language.bubbletea",
-				"match": "null"
 			},
 			{
 				"name": "variable.bubbletea",
@@ -69,15 +79,31 @@
 		"strings": {
 			"name": "string.quoted.double.bubbletea",
 			"begin": "\"",
-			"end": "\""
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bubbletea",
+					"match": "\\\\[nrt\"'\\\\]"
+				},
+				{
+				"name": "constant.character.escape.bubbletea",
+				"match": "\\\\x1b"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"begin": "\\bfn\\s+(\\w+)",
+					"beginCaptures": {
+						"0": { "name": "keyword.declaration.function.bubbletea" },
+						"1": { "name": "entity.name.function.bubbletea" }
+					},
+					"end": "(?=\\{)",
+					"patterns": []
+				}
+			]
 		}
 	},
-	"themes": [
-		{
-		  "label": "BubbleTea Blue",
-		  "uiTheme": "vs-dark", 
-		  "path": "./themes/bubbletea-blue.json"
-		}
-	],
 	"scopeName": "source.tea"
 }
